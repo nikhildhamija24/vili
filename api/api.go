@@ -58,6 +58,14 @@ func AddHandlers(s *server.Server) {
 	s.Echo().PUT(envPrefix+"configmaps/:configmap/keys", envMiddleware(configmapSetKeysHandler))
 	s.Echo().DELETE(envPrefix+"configmaps/:configmap/:key", envMiddleware(configmapDeleteKeyHandler))
 
+	// ssm parameter store
+	s.Echo().GET(envPrefix+"ssmparameters", envMiddleware(ssmparamGetSSMPathsHandler))
+	s.Echo().GET(envPrefix+"ssmparameters/:pathprefix/spec", envMiddleware(ssmparamSpecGetHandler))
+	s.Echo().POST(envPrefix+"ssmparameters/:pathprefix", envMiddleware(ssmparamCreateHandler))
+	s.Echo().DELETE(envPrefix+"ssmparameters/:pathprefix", envMiddleware(ssmparamDeleteHandler))
+	s.Echo().PUT(envPrefix+"ssmparameters/:pathprefix/keys", envMiddleware(ssmparamSetKeysHandler))
+	s.Echo().DELETE(envPrefix+"ssmparameters/:pathprefix/:key", envMiddleware(ssmparamDeleteKeyHandler))
+
 	// pods
 	s.Echo().GET(envPrefix+"pods", envMiddleware(podsHandler))
 	s.Echo().GET(envPrefix+"pods/:pod/log", envMiddleware(podLogHandler))
