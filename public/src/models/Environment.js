@@ -12,4 +12,5 @@ export default class Environment extends Immutable.Record({
   deployments: Immutable.List(),
   functions: Immutable.List(),
   configmaps: Immutable.List(),
+  ssmparameters: Immutable.List(),
 }) {}

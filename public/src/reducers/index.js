@@ -7,6 +7,7 @@ import jobs from "./jobs"
 import jobRuns from "./jobRuns"
 import functions from "./functions"
 import configmaps from "./configmaps"
+import ssmparamters from "./ssmparameters"
 import pods from "./pods"
 import nodes from "./nodes"
 
@@ -26,6 +27,7 @@ const reducers = {
   jobRuns,
   functions,
   configmaps,
+  ssmparameters,
   pods,
   nodes,
 }

@@ -31,6 +31,9 @@ export const SET_FUNCTION_FIELD = "SET_FUNCTION_FIELD"
 // configMaps
 export const CHANGE_CONFIGMAP = "CHANGE_CONFIGMAP"
 export const SET_CONFIGMAP_FIELD = "SET_CONFIGMAP_FIELD"
+// ssm params
+export const CHANGE_SSM_PARAMTER = "CHANGE_SSM_PARAMTER"
+export const SET_SSM_PARAMTER_FIELD = "SET_SSM_PARAMTER_FIELD"
 // pods
 export const CHANGE_POD = "CHANGE_POD"
 export const ADD_POD_LOG = "ADD_POD_LOG"
