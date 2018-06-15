@@ -9,6 +9,7 @@ import Deployments from "../../handlers/Deployments"
 import Functions from "../../handlers/Functions"
 import Jobs from "../../handlers/Jobs"
 import ConfigMaps from "../../handlers/ConfigMaps"
+import SsmParameters from "../../handlers/SsmParameters"
 import Pods from "../../handlers/Pods"
 import Nodes from "../../handlers/Nodes"
 import NotFoundPage from "../../components/NotFoundPage"
@@ -20,6 +21,7 @@ import { subReplicaSets } from "../../actions/replicaSets"
 import { subJobRuns } from "../../actions/jobRuns"
 import { subFunctions } from "../../actions/functions"
 import { subConfigMaps } from "../../actions/configmaps"
+import { subSsmParameters } from "../../actions/ssmparameters"
 import { subPods } from "../../actions/pods"
 import { subNodes } from "../../actions/nodes"
 
@@ -31,6 +33,7 @@ const dispatchProps = {
   subJobRuns,
   subFunctions,
   subConfigMaps,
+  subSsmParameters,
   subPods,
   subNodes,
 }
@@ -61,6 +64,7 @@ export class Environment extends React.Component {
       subJobRuns,
       subFunctions,
       subConfigMaps,
+      subSsmParameters,
       subPods,
       subNodes,
     } = this.props
@@ -71,6 +75,7 @@ export class Environment extends React.Component {
     subJobRuns(env)
     subFunctions(env)
     subConfigMaps(env)
+    subSsmParameters(env)
     subPods(env)
     subNodes(env)
   }
@@ -86,6 +91,7 @@ export class Environment extends React.Component {
         <Route path={`${prefix}/jobs`} component={Jobs} />
         <Route path={`${prefix}/functions`} component={Functions} />
         <Route path={`${prefix}/configmaps`} component={ConfigMaps} />
+        <Route path={`${prefix}/ssmparameters`} component={SsmParameters} />
         <Route path={`${prefix}/pods`} component={Pods} />
         <Route path={`${prefix}/nodes`} component={Nodes} />
         <Route component={NotFoundPage} />
@@ -102,6 +108,7 @@ Environment.propTypes = {
   subJobRuns: PropTypes.func.isRequired,
   subFunctions: PropTypes.func.isRequired,
   subConfigMaps: PropTypes.func.isRequired,
+  subSsmParameters: PropTypes.func.isRequired,
   subPods: PropTypes.func.isRequired,
   subNodes: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,

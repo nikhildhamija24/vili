@@ -64,6 +64,11 @@ export class EnvironmentHome extends React.Component {
       )
     }
     items.push(
+      <li key="ssmparamters">
+        <Link to={`/${envName}/ssmparameters`}>Ssm Parameters</Link>
+      </li>
+    )
+    items.push(
       <li key="nodes">
         <Link to={`/${envName}/nodes`}>Nodes</Link>
       </li>

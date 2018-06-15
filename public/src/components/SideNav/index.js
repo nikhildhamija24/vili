@@ -133,6 +133,17 @@ export class SideNav extends React.Component {
         })
       }
     }
+    if(env.ssmparamters && !env.ssmparamters.isEmpty()) {
+      items.push(
+        <LinkMenuItem 
+          key="ssmparameters"
+          to={`${env.name}/ssmparameters`}
+          active={nav.item === "ssmparamters" && !nav.subitem}
+        > 
+          SsmParameters 
+        </LinkMenuItem>
+      )
+    }
     items.push(
       <LinkMenuItem
         key="nodes"
