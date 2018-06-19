@@ -11,7 +11,7 @@ export class SsmParameters extends React.Component {
         return(
             <Switch>
                 <Route exact path={`${prefix}`} Component={SsmParametersList}/>
-                <Route exact path={`${prefix}/:ssmparameter`} Component={SsmParameter}/>
+                {/* <Route exact path={`${prefix}/:ssmparameter`} Component={SsmParameter}/> */}
             </Switch>
         )
     }
