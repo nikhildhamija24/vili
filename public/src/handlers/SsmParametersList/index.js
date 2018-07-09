@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SsmParametersList from '../../containers/SsmParameters/SsmParametersList'
+import SsmParametersList from '../../containers/ssmparameters/SsmParametersList'
 
 export class SsmParametersListHandler extends React.Component {
     render () {
@@ -10,7 +10,7 @@ export class SsmParametersListHandler extends React.Component {
 }
 
 SsmParametersListHandler.propTypes = {
-    match: PropTypes.object.isRequired
+    match: PropTypes.object.isRequired,
 }
 
 export default SsmParametersListHandler

@@ -1,7 +1,5 @@
 import { CHANGE_SSM_PARAMETER, SET_SSM_PARAMTER_FIELD } from "../constants"
-
-import SsmParameter from "../models/SsmParameters"
-
+import SsmParameter from "../models/SsmParameter"
 import { getInitialState, changeObject, setDataField } from "./utils"
 
 const initialState = getInitialState()

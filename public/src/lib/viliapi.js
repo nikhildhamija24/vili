@@ -147,6 +147,40 @@ export default {
     },
   },
 
+  ssmparameters: {
+    watch(handler, env, qs) {
+      qs = qs || {}
+      qs.watch = "true"
+      return httpClient.ws({
+        url: `envs/${env}/ssmparameters`,
+        qs: qs,
+        messageHandler: handler,
+      })
+    },
+    async getSpec(env, name) {
+      return await httpClient.get({
+        url: `envs/${env}/ssmparameters/${name}/spec`,
+      })
+    },
+    async create(env, name) {
+      return await httpClient.post({ url: `envs/${env}/ssmparameters/${name}` })
+    },
+    async del(env, name) {
+      return await httpClient.delete({ url: `envs/${env}/ssmparameters/${name}` })
+    },
+    async setKeys(env, name, values) {
+      return await httpClient.put({
+        url: `envs/${env}/ssmparameters/${name}/keys`,
+        json: values,
+      })
+    },
+    async delKey(env, name, key) {
+      return await httpClient.delete({
+        url: `envs/${env}/ssmparameters/${name}/${key}`,
+      })
+    },
+  },
+
   pods: {
     watch(handler, env, qs) {
       qs = qs || {}

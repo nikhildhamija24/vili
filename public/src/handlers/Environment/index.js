@@ -21,7 +21,7 @@ import { subReplicaSets } from "../../actions/replicaSets"
 import { subJobRuns } from "../../actions/jobRuns"
 import { subFunctions } from "../../actions/functions"
 import { subConfigMaps } from "../../actions/configmaps"
-import { subSsmParameters } from "../../actions/ssmparameters"
+// import { subSsmParameters } from "../../actions/ssmparameters"
 import { subPods } from "../../actions/pods"
 import { subNodes } from "../../actions/nodes"
 
@@ -33,7 +33,7 @@ const dispatchProps = {
   subJobRuns,
   subFunctions,
   subConfigMaps,
-  subSsmParameters,
+  // subSsmParameters,
   subPods,
   subNodes,
 }
@@ -64,7 +64,7 @@ export class Environment extends React.Component {
       subJobRuns,
       subFunctions,
       subConfigMaps,
-      subSsmParameters,
+      // subSsmParameters,
       subPods,
       subNodes,
     } = this.props
@@ -75,7 +75,7 @@ export class Environment extends React.Component {
     subJobRuns(env)
     subFunctions(env)
     subConfigMaps(env)
-    subSsmParameters(env)
+    // subSsmParameters(env)
     subPods(env)
     subNodes(env)
   }
@@ -108,7 +108,7 @@ Environment.propTypes = {
   subJobRuns: PropTypes.func.isRequired,
   subFunctions: PropTypes.func.isRequired,
   subConfigMaps: PropTypes.func.isRequired,
-  subSsmParameters: PropTypes.func.isRequired,
+  // subSsmParameters: PropTypes.func.isRequired,
   subPods: PropTypes.func.isRequired,
   subNodes: PropTypes.func.isRequired,
   match: PropTypes.object.isRequired,
