@@ -4,6 +4,7 @@ import { Nav } from "react-bootstrap"
 import { connect } from "react-redux"
 
 import LinkMenuItem from "../LinkMenuItem"
+import SsmParameter from "../../models/SsmParameter"
 
 function mapStateToProps(state, ownProps) {
   const envName = state.app.get("env")
@@ -133,7 +134,7 @@ export class SideNav extends React.Component {
         })
       }
     }
-    if(env.ssmparamters && !env.ssmparamters.isEmpty()) {
+    if(env.ssmparameters && !env.ssmparameters.isEmpty()) {
       items.push(
         <LinkMenuItem 
           key="ssmparameters"

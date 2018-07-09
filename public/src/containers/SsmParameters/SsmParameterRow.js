@@ -20,10 +20,10 @@ export class SsmParameterRow extends React.Component{ // each actual parameter i
     }
 }
 
-SsmParametersRow.propTypes = {
+SsmParameterRow.propTypes = {
     Name: PropTypes.string,
     Value: PropTypes.string,
     Modified_Date: PropTypes.string
 }
 
-export default SsmParametersRow
+export default SsmParameterRow

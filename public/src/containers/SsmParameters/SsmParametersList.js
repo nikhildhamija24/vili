@@ -1,46 +1,57 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Table } from "react-bootstrap"
+import Table from "react-bootstrap"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 
-import SsmParametersListRow from "./SsmParametersListRow"
+import { activateNav } from "../../actions/app"
+import { makeLookUpObjects } from "../../selectors"
 
-function mapStateToProps() {
-   return (state, ownProps) => {
-       const { envName } = ownProps
-       const env = state.envs.getIn(["envs", envName])
-       return {
-           env,
-       }
-   } 
+// import SsmParametersListRow from "./SsmParametersListRow"
+
+function makeMapStateToProps() {
+    const lookUpObjects = makeLookUpObjects()
+    return (state, ownProps) => {
+        const { envName } = ownProps
+        const env = state.envs.getIn(["envs", envName])
+        return {
+            envName,
+        }
+    }
 }
 
-export class SsmParametersList extends React.Component { // List with environment names
+export class SsmParametersList extends React.Component { // List with environment name
     render(){
-        const { env, envName } = this.props
+    console.log("envName", env)
+    console.log("env", envName)        
+        const header = (
+            <div className="view-header">
+                <ol className="breadcrumb">
+                    <li>
+                        <Link to={`/${envName}`}>{envName}</Link>
+                    </li>
+                    <li className="active">
+                        SsmParameters
+                    </li>
+                </ol>
+            </div>
+        )
+        const columns = [
+            { title: "Name", key: "name" },
+            { title: "Key Count", key: "key-count" },
+            { title: "Created", key: "created" },
+          ]
         return(
-            <table>
-                <thead>
-                    <tr>
-                        <td>Name</td>
-                        <td>Key Count</td>
-                        <td>Created At</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <SsmParametersListRow />
-                </tbody>
-            </table>
+            <div>
+                {header}
+                {/* <Table columns={columns}/> */}
+            </div>
         )
     }
 }
 
-export default SsmParametersList
-
 SsmParametersList.propTypes = {
     envName: PropTypes.string,
-    env: PropTypes.object,
 }
 
-connect(mapStateToProps, dispatchProps)(SsmParametersList)
+export default connect(makeMapStateToProps)(SsmParametersList)
