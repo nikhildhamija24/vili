@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import SsmParameterRow from './SsmParameterRow';
-
-export class SsmParameter extends React.Component { // each actual parameter here
-=======
 import React from "react"
 import SsmParameterRow from "./SsmParameterRow"
 
@@ -19,7 +13,6 @@ export class SsmParameter extends React.Component { // each actual parameter her
         }
     }
 
->>>>>>> internal/CLD-6163
     render() {
         return (
             <SsmParameterRow Name={"Name"} Value={"Value"} ModifiedDate={"Modified_Date"} />

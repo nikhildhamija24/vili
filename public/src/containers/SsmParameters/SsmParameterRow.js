@@ -20,18 +20,10 @@ export class SsmParameterRow extends React.Component{ // each actual parameter i
     }
 }
 
-<<<<<<< HEAD
-SsmParametersRow.propTypes = {
-=======
 SsmParameterRow.propTypes = {
->>>>>>> internal/CLD-6163
     Name: PropTypes.string,
     Value: PropTypes.string,
     Modified_Date: PropTypes.string
 }
 
-<<<<<<< HEAD
-export default SsmParametersRow
-=======
 export default SsmParameterRow
->>>>>>> internal/CLD-6163
